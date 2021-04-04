@@ -56,7 +56,7 @@ function JobPostingCard (props){
                         <IconButton aria-label="View as member" title={"View as member"}>
                             <Visibility/>
                         </IconButton>
-                        <IconButton aria-label={"Delete"} title={"Delete Posting"}>
+                        <IconButton aria-label={"Delete"} title={"Delete Posting"} onClick={() => props.deleteFunction(props.cardObject._id)}>
                             <Delete/>
                         </IconButton>
                         <IconButton // expand button

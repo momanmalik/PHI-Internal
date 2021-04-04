@@ -69,11 +69,20 @@ class JobPostingGrid extends React.Component {
 
     //TODO: dynamically render all cards in grid format
     // uses the hard-coded card objects from the cardInfo array
+
+    deletePosting = (id) => {
+        var array = this.state.cardData
+        var newArray = array.filter( (e) => {
+            return e._id !== id
+        });
+        this.setState({cardData: newArray})
+    }
+
     render() {
         return (
             <Grid container class={"MuiGrid-container"}>
                 {this.state.cardData.map((data) => {
-                    return (<JobPostingCard changeStatus={this.handlePublish} cardObject={data}></JobPostingCard>)
+                    return (<JobPostingCard changeStatus={this.handlePublish} cardObject={data} deleteFunction={this.deletePosting} ></JobPostingCard>)
                 })}
 
             </Grid>

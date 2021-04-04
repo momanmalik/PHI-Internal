@@ -14,6 +14,11 @@ import Login from "./components/auth/Login";
 import PrivateRoute from "./components/private-route/PrivateRoute";
 import Dashboard from "./components/dashboard/Dashboard";
 
+import { FooterContainer } from "./components/layout/footer/containers/footer";
+import { TermsOfCondition } from "./components/layout/footer/containers/TermsOfCondition";
+import { PrivacyPolicy } from "./components/layout/footer/containers/PrivacyPolicy";
+
+
 import "./App.css";
 
 import Hiring from "./components/layout/hiring-page/Hiring.js";
@@ -42,12 +47,15 @@ const App = () => {
   return (
     <Provider store={store}>
       <Router>
-        <div className="App">
+        <div className="App" >
           <Navbar />
           <Route exact path="/" component={Landing} />
           <Route exact path="/register" component={Register} />
           <Route exact path="/login" component={Login} />
           <Route exact path="/hiring" component={Hiring}/>
+          <Route exact path="/PrivacyPolicy" component={PrivacyPolicy} />
+          <Route exact path="/TermsOfCondition" component={TermsOfCondition} />
+          <FooterContainer/>
           <Switch>
             <PrivateRoute exact path="/dashboard" component={Dashboard} />
           </Switch>
