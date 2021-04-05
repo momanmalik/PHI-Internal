@@ -71,8 +71,8 @@ class JobPostingGrid extends React.Component {
     // uses the hard-coded card objects from the cardInfo array
 
     deletePosting = (id) => {
-        var array = this.state.cardData
-        var newArray = array.filter( (e) => {
+        let array = this.state.cardData
+        let newArray = array.filter( (e) => {
             return e._id !== id
         });
         this.setState({cardData: newArray})
